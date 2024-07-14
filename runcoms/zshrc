@@ -10,4 +10,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Source sensitive aliases.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcom/zsh_work" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcom/zsh_work"
+fi
+
+# Aliases
+# I store non-sensitive aliases here, but keep any sensitive aliases in a
+# separate file, so I don't have to commit it to source control.
+
+# Utility
+alias myip="curl http://ipecho.net/plain; echo"
+
+# Git
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias glog='git log --oneline --decorate --graph'
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
