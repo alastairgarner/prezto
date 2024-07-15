@@ -11,8 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Source sensitive aliases.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcom/zsh_work" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcom/zsh_work"
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_work" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_work"
 fi
 
 # Aliases
