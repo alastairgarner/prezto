@@ -1,8 +1,13 @@
-# Update software
-alias update="sudo apt update && sudo apt upgrade"
+# Rebuild and switch
+alias rebuild='sudo nixos-rebuild switch'
+
+# Git
+alias config='/etc/profiles/per-user/alastair/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias glog='git log --oneline --decorate --graph'
 
 # Add nvim to path
-export PATH="$HOME/neovim/bin:$PATH"
-export EDITOR="$HOME/neovim/bin/nvim"
-export SUDO_EDITOR="$HOME/neovim/bin/nvim"
-export GIT_EDITOR="$HOME/neovim/bin/nvim"
+NVIM_BIN=/etc/profiles/per-user/alastair/bin
+export PATH="$NVIM_BIN:$PATH"
+export EDITOR="$NVIM_BIN/nvim"
+export SUDO_EDITOR="$NVIM_BIN/nvim"
+export GIT_EDITOR="$NVIM_BIN/nvim"

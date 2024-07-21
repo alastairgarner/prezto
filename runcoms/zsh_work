@@ -2,6 +2,10 @@
 alias update="softwareupdate -ia"
 alias brupdate="brew update && brew upgrade"
 
+# Git
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias glog='git log --oneline --decorate --graph'
+
 # MongoDB
 alias mongod="ulimit -n 64000 && mongod --ipv6 --replSet rs0 --dbpath /Users/alastair/mongo-data/db/"
 alias mongo="mongosh mongodb+srv://username:password@uri"
