@@ -8,7 +8,7 @@ alias glog='git log --oneline --decorate --graph'
 
 # MongoDB
 alias mongod="ulimit -n 64000 && mongod --ipv6 --replSet rs0 --dbpath /Users/alastair/mongo-data/db/"
-alias mongo="mongosh mongodb+srv://username:password@uri"
+alias mongo="mongosh mongodb+srv://$MONGODB_DEV_USERNAME:$MONGODB_DEV_PASSWORD@$MONGODB_DEV_URI"
 
 # Second Nature
 alias sn-web='cd /Users/alastair/sn-web/ && nvm use'
