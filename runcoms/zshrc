@@ -10,9 +10,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source .env.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/.env" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/.env"
+fi
+
 # Source sensitive aliases.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_nix" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_nix"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_debian"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_macos"
+else
+    echo "Unknown OS type: $OSTYPE"
+fi
+
+# Source .env.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_shared" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_shared"
 fi
 
 # Aliases

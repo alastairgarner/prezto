@@ -2,13 +2,7 @@
 alias rebuild='sudo nixos-rebuild switch'
 
 # Git
-alias config='/etc/profiles/per-user/alastair/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias glog='git log --oneline --decorate --graph'
+export GIT_BIN='/etc/profiles/per-user/alastair/bin/git'
 
 # Add nvim to path
-NVIM_BIN=/etc/profiles/per-user/alastair/bin
-export PATH="$NVIM_BIN:$PATH"
-export EDITOR="$NVIM_BIN/nvim"
-export SUDO_EDITOR="$NVIM_BIN/nvim"
-export GIT_EDITOR="$NVIM_BIN/nvim"
-export VISUAL="$NVIM_BIN/nvim"
+export NVIM_BIN='/etc/profiles/per-user/alastair/bin/nvim'

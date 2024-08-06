@@ -2,8 +2,7 @@
 alias update="sudo apt update && sudo apt upgrade"
 
 # Git
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias glog='git log --oneline --decorate --graph'
+export GIT_BIN='/usr/bin/git'
 
 # Add nvim to path
 export PATH="$HOME/neovim/bin:$PATH"
