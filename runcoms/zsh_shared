@@ -1,3 +1,7 @@
+# If zsh was built locally, source the fzf.zsh.
+# If installed using a package manager this is redundant
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Set up fzf key bindings
 source <(fzf --zsh)
 

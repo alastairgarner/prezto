@@ -24,7 +24,7 @@ else
     echo "Unknown OS type: $OSTYPE"
 fi
 
-# Source .env.
+# Source any shared config
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_shared" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_shared"
 fi
@@ -39,3 +39,5 @@ alias myip="curl http://ipecho.net/plain; echo"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
