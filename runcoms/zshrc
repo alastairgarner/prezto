@@ -17,11 +17,12 @@ fi
 
 # Source sensitive aliases.
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_debian"
+  echo "Debian"
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_debian"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_macos"
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_macos"
 else
-    echo "Unknown OS type: $OSTYPE"
+  echo "Unknown OS type: $OSTYPE"
 fi
 
 # Source any shared config

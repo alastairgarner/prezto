@@ -10,7 +10,7 @@ alias glog='git log --oneline --decorate --graph'
 alias config='$GIT_BIN --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Add nvim to path
-export PATH="$NVIM_BIN:$PATH"
+export PATH="$(dirname $NVIM_BIN):$PATH"
 export EDITOR="$NVIM_BIN"
 export SUDO_EDITOR="$NVIM_BIN"
 export GIT_EDITOR="$NVIM_BIN"

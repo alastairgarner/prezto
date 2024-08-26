@@ -4,9 +4,6 @@ alias update="sudo apt update && sudo apt upgrade"
 # Git
 export GIT_BIN='/usr/bin/git'
 
-# Add nvim to path
-export PATH="$HOME/neovim/bin:$PATH"
-export EDITOR="$HOME/neovim/bin/nvim"
-export SUDO_EDITOR="$HOME/neovim/bin/nvim"
-export GIT_EDITOR="$HOME/neovim/bin/nvim"
-export VISUAL="$HOME/neovim/bin/nvim"
+# nvim
+export NVIM_BIN="$HOME/neovim/bin/nvim"
+
