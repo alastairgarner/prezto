@@ -5,6 +5,27 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+source_config_for_os() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "MacOS"
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_macos"
+    return
+  fi
+
+  OS=$(cat /etc/os-release | grep -Po '^NAME=\K.*')
+
+  # Source sensitive aliases.
+  if [[ $OS == *"Debian"* ]]; then
+    echo "Debian"
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_debian"
+  elif [[ $OS == *"Nix"* ]]; then
+    echo "NixOS"
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_nix"
+  else
+    echo "Unknown OS type: $OSTYPE"
+  fi
+}
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -15,15 +36,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/.env" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/.env"
 fi
 
-# Source sensitive aliases.
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo "Debian"
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_debian"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_macos"
-else
-  echo "Unknown OS type: $OSTYPE"
-fi
+source_config_for_os
 
 # Source any shared config
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zsh_shared" ]]; then
