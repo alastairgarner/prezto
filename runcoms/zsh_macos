@@ -2,6 +2,9 @@
 alias update="softwareupdate -ia"
 alias brupdate="brew update && brew upgrade"
 
+# Python
+alias python=python3.12
+
 # Git
 export GIT_BIN='/usr/bin/git'
 
